@@ -1,0 +1,1 @@
+ABCDEFO. This is a long paragraph, but it's worth reading. The basic idea is that we want to create a new type of object that can be used to read and write data to a file. This object will be able to read and write data in a variety of formats, such as text, binary, and XML. We will create a new class called File
