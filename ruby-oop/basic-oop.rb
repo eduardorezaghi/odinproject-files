@@ -1,10 +1,24 @@
 class GoodDog
-  attr_accessor :name, :height, :weight
+  DOG_YEARS = 7
 
-  def initialize(name, height, weight)
-    @name = name
-    @height = height
-    @weight = weight
+  attr_accessor :name, :height, :weight, :age
+  @@number_of_dogs = 0
+
+
+  def self.what_am_i
+    "I'm a GoodDog class!"
+  end
+
+  def self.total_number_of_dogs
+    @@number_of_dogs
+  end
+
+  def initialize(name, height, weight, age)
+    @@number_of_dogs += 1
+    self.name = name
+    self.height = height
+    self.weight = weight
+    self.age = age * DOG_YEARS
   end
 
   def speak
@@ -25,12 +39,18 @@ class GoodDog
 
 end
 
-sparky = GoodDog.new("Sparky", "12 inches", "10 lbs")
-fido = GoodDog.new("Fido", "24 inches", "45 lbs")
+sparky = GoodDog.new("Sparky", "12 inches", "10 lbs", 4)
+fido = GoodDog.new("Fido", "24 inches", "45 lbs", 8)
 
 puts sparky.speak
 puts sparky.name
 
+puts sparky.info # Sparky weighs 10 lbs and is 12 inches tall.
 
 puts sparky.change_info("Spartacus", "24 inches", "45 lbs")
 puts sparky.info # Spartacus weighs 45 lbs and is 24 inches tall.
+
+puts fido.info # Fido weighs 45 lbs and is 24 inches tall.
+
+puts GoodDog.what_am_i # I'm a GoodDog class!
+puts "Total number of dogs: #{GoodDog.total_number_of_dogs}" # 2
