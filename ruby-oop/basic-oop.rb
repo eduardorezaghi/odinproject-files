@@ -37,20 +37,29 @@ class GoodDog
     "#{self.name} weighs #{self.weight} and is #{self.height} tall."
   end
 
+  def to_s
+    "This dog's name is #{name} and it is #{age} in dog years."
+  end
+
 end
 
 sparky = GoodDog.new("Sparky", "12 inches", "10 lbs", 4)
 fido = GoodDog.new("Fido", "24 inches", "45 lbs", 8)
 
+puts sparky
 puts sparky.speak
 puts sparky.name
-
 puts sparky.info # Sparky weighs 10 lbs and is 12 inches tall.
+puts
 
 puts sparky.change_info("Spartacus", "24 inches", "45 lbs")
+puts sparky # Now is Spartacus
 puts sparky.info # Spartacus weighs 45 lbs and is 24 inches tall.
+puts
 
+puts fido
 puts fido.info # Fido weighs 45 lbs and is 24 inches tall.
+puts
 
 puts GoodDog.what_am_i # I'm a GoodDog class!
 puts "Total number of dogs: #{GoodDog.total_number_of_dogs}" # 2
