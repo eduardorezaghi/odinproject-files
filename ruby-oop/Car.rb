@@ -11,6 +11,10 @@ class Car
     @speed = 0
   end
 
+  def self.gas_mileage(gallons, miles)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+
   def speed_up(number)
     self.speed += number
     puts "You push the gas and accelerate #{number} km/h."
@@ -34,6 +38,10 @@ class Car
   def info
     "#{self.year} #{self.make} #{self.model} in #{self.color}"
   end
+
+  def to_s
+    return "The car info is: #{self.make} #{self.model} #{self.year} #{self.color} #{self.speed}"
+  end
 end
 
 
@@ -44,3 +52,5 @@ corolla.speed_up(60)
 corolla.brake(60)
 corolla.shut_down
 corolla.spray_paint("black")
+puts Car.gas_mileage(13, 351) # 27 miles per gallon of gas
+puts corolla
